@@ -1,4 +1,4 @@
-module telelog
+module github.com/pH-T/telelog
 
 go 1.12
 
