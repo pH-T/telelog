@@ -45,7 +45,7 @@ func sendMessage(msg string, token string, chatID string) error {
 
 }
 
-func (telelog *Telelog) log(msg string, level string) error {
+func (telelog *Telelog) Log(msg string, level string) error {
 
 	err := sendMessage(level+": "+time.Now().Format(time.RFC3339)+":\n "+msg, telelog.token, telelog.chatID)
 	if err != nil {
@@ -58,24 +58,24 @@ func (telelog *Telelog) log(msg string, level string) error {
 
 func (telelog *Telelog) LogError(msg string) error {
 
-	return telelog.log(msg, TELELOG_LEVEL_ERROR)
+	return telelog.Log(msg, TELELOG_LEVEL_ERROR)
 
 }
 
-func (telelog *Telelog) logAlert(msg string) error {
+func (telelog *Telelog) LogAlert(msg string) error {
 
-	return telelog.log(msg, TELELOG_LEVEL_ALERT)
-
-}
-
-func (telelog *Telelog) logInfo(msg string) error {
-
-	return telelog.log(msg, TELELOG_LEVEL_INFO)
+	return telelog.Log(msg, TELELOG_LEVEL_ALERT)
 
 }
 
-func (telelog *Telelog) logSuccess(msg string) error {
+func (telelog *Telelog) LogInfo(msg string) error {
 
-	return telelog.log(msg, TELELOG_LEVEL_SUCCESS)
+	return telelog.Log(msg, TELELOG_LEVEL_INFO)
+
+}
+
+func (telelog *Telelog) LogSuccess(msg string) error {
+
+	return telelog.Log(msg, TELELOG_LEVEL_SUCCESS)
 
 }
