@@ -12,7 +12,7 @@ Sends your log to your Telegram account. Uses the Telegram Bot API.
 ## Usage
 
 ```go
-telelog := telelog.NewTelelog("TOKEN", "CHAT_ID") // os.Getenv("TOKEN")
+logger := telelog.NewTelelog("TOKEN", "CHAT_ID") // os.Getenv("TOKEN")
 logger.LogError("Here is some text")
 logger.LogAlert("Here is some text")
 logger.LogInfo("Here is some text")
