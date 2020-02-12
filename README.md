@@ -13,10 +13,10 @@ Sends your log to your Telegram account. Uses the Telegram Bot API.
 
 ```go
 telelog := telelog.NewTelelog("TOKEN", "CHAT_ID") // os.Getenv("TOKEN")
-telelog.logError("Here is some text")
-telelog.logAlert("Here is some text")
-telelog.logInfo("Here is some text")
-telelog.logSuccess("Here is some text")
+logger.LogError("Here is some text")
+logger.LogAlert("Here is some text")
+logger.LogInfo("Here is some text")
+logger.LogSuccess("Here is some text")
 ```
 
 ![](output.png)
